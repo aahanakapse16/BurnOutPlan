@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sanctuary | Burnout Recovery Planner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#9ed3aa",
+                        "surface-bright": "#fbf9f6",
+                        "tertiary-fixed": "#a1f2e2",
+                        "inverse-surface": "#30312f",
+                        "secondary-fixed": "#eae1d2",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "outline": "#717971",
+                        "outline-variant": "#c1c9bf",
+                        "surface-container-low": "#f5f3f0",
+                        "tertiary": "#066a5f",
+                        "secondary": "#645e52",
+                        "surface-variant": "#e4e2df",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#00201c",
+                        "primary-fixed-dim": "#9ed3aa",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#85d5c7",
+                        "on-secondary-fixed-variant": "#4b463b",
+                        "secondary-fixed-dim": "#cec5b7",
+                        "on-primary-fixed-variant": "#1e5030",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e4e2df",
+                        "surface-tint": "#376847",
+                        "inverse-on-surface": "#f2f0ed",
+                        "on-secondary-container": "#686256",
+                        "background": "#fbf9f6",
+                        "on-surface-variant": "#414941",
+                        "surface-container-high": "#eae8e5",
+                        "on-secondary-fixed": "#1f1b12",
+                        "surface-container": "#efeeeb",
+                        "on-tertiary-fixed-variant": "#005047",
+                        "surface-dim": "#dbdad7",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#b9efc4",
+                        "primary": "#376847",
+                        "primary-container": "#6b9e78",
+                        "surface": "#fbf9f6",
+                        "on-background": "#1b1c1a",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1b1c1a",
+                        "on-primary-container": "#003318",
+                        "tertiary-container": "#4fa093",
+                        "on-tertiary-container": "#00322c",
+                        "secondary-container": "#e8dfd0",
+                        "on-primary-fixed": "#00210d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "16px",
+                        "xl": "24px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+
+    <!-- Top Navigation Bar (Shared Component) -->
+    <nav class="fixed top-0 w-full z-50 bg-[#F9F7F4]/80 backdrop-blur-xl dark:bg-[#1B1C1A]/80">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <div class="text-2xl font-bold text-[#376847] dark:text-[#6B9E78] font-['Plus_Jakarta_Sans'] tracking-tight">
+                Sanctuary
+            </div>
+            <div class="flex items-center space-x-6">
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#" class="text-[#376847] dark:text-[#6B9E78] font-semibold border-b-2 border-[#376847] transition-colors duration-300">Planner</a>
+                    <a href="#" class="text-[#645E52] dark:text-[#E8DFD0] hover:text-[#376847] transition-colors duration-300">Resources</a>
+                    <a href="#" class="text-[#645E52] dark:text-[#E8DFD0] hover:text-[#376847] transition-colors duration-300">Community</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">account_circle</span>
+                    <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">settings</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-12">
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden px-6 py-20 lg:py-32">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-fixed via-surface to-secondary-container opacity-40 -z-10"></div>
+            <div class="max-w-4xl mx-auto text-center space-y-8">
+                <h1 class="font-headline text-5xl lg:text-7xl font-extrabold text-on-surface tracking-tight leading-tight">
+                    🌿 Burnout Recovery Planner
+                </h1>
+                <p class="text-xl lg:text-2xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+                    Tell us about your situation. Our AI builds your personalized 21-day recovery plan.
+                </p>
+                <div class="inline-flex items-center px-6 py-3 rounded-full bg-surface-container-low text-primary font-medium border border-outline-variant/20">
+                    <span class="material-symbols-outlined mr-2">timer</span>
+                    In the next 60 seconds, we’ll create a realistic plan you can actually follow.
+                </div>
+            </div>
+        </section>
+
+        <!-- Input Section -->
+        <section class="max-w-3xl mx-auto px-6 mt-12 space-y-12">
+            <div class="text-center space-y-2">
+                <h2 class="font-headline text-3xl font-bold text-on-surface">Tell Us About Your Situation</h2>
+                <div class="h-1 w-20 bg-primary mx-auto rounded-full opacity-30"></div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Work Situation Card -->
+                <div class="bg-surface-container-lowest p-8 rounded-xl border-l-8 border-primary shadow-sm space-y-4">
+                    <label class="block font-headline text-lg font-semibold text-on-surface">Work Situation</label>
+                    <textarea class="w-full bg-surface-container-high rounded-lg p-4 border-none focus:ring-2 focus:ring-primary-container/30 min-h-[120px] placeholder-on-surface-variant/50" placeholder="Describe your current role, hours, and responsibilities..."></textarea>
+                    <p class="text-sm text-on-surface-variant flex items-center">
+                        <span class="material-symbols-outlined text-sm mr-1">info</span>
+                        Mention if you are remote, in-office, or leading a team.
+                    </p>
+                </div>
+
+                <!-- Stress Triggers Card -->
+                <div class="bg-surface-container-lowest p-8 rounded-xl border-l-8 border-primary shadow-sm space-y-4">
+                    <label class="block font-headline text-lg font-semibold text-on-surface">Stress Triggers</label>
+                    <textarea class="w-full bg-surface-container-high rounded-lg p-4 border-none focus:ring-2 focus:ring-primary-container/30 min-h-[120px] placeholder-on-surface-variant/50" placeholder="What specifically is draining your energy right now?"></textarea>
+                    <p class="text-sm text-on-surface-variant flex items-center">
+                        <span class="material-symbols-outlined text-sm mr-1">bolt</span>
+                        Examples: Constant meetings, lack of boundaries, or technical debt.
+                    </p>
+                </div>
+
+                <!-- Lifestyle Card -->
+                <div class="bg-surface-container-lowest p-8 rounded-xl border-l-8 border-primary shadow-sm space-y-4">
+                    <label class="block font-headline text-lg font-semibold text-on-surface">Lifestyle</label>
+                    <textarea class="w-full bg-surface-container-high rounded-lg p-4 border-none focus:ring-2 focus:ring-primary-container/30 min-h-[120px] placeholder-on-surface-variant/50" placeholder="Sleep patterns, exercise, and diet..."></textarea>
+                    <p class="text-sm text-on-surface-variant flex items-center">
+                        <span class="material-symbols-outlined text-sm mr-1">favorite</span>
+                        How are you supporting your physical self today?
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex justify-center pt-8">
+                <button class="bg-primary text-on-primary px-10 py-5 rounded-full font-headline text-xl font-bold shadow-xl hover:bg-primary-container transition-all active:scale-95 flex items-center group">
+                    <span class="material-symbols-outlined mr-2 group-hover:rotate-12 transition-transform">auto_awesome</span>
+                    ✨ Build My Recovery Plan
+                </button>
+            </div>
+        </section>
+
+        <!-- Progress Tracking -->
+        <section class="max-w-3xl mx-auto px-6 mt-24 space-y-10">
+            <div class="bg-surface-container-low p-10 rounded-xl space-y-8">
+                <div class="flex justify-between items-end">
+                    <div class="space-y-1">
+                        <p class="text-sm font-bold text-primary uppercase tracking-widest">Engine Processing</p>
+                        <h3 class="text-2xl font-bold text-on-surface">Assembling your sanctuary...</h3>
+                    </div>
+                    <span class="text-3xl font-bold text-primary">65%</span>
+                </div>
+                
+                <div class="w-full h-3 bg-surface-container-highest rounded-full overflow-hidden">
+                    <div class="w-[65%] h-full bg-primary rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-center space-x-3 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        <span>Researching techniques</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        <span>Analyzing habits</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-on-surface font-semibold animate-pulse">
+                        <span class="material-symbols-outlined text-primary spin">progress_activity</span>
+                        <span>Writing your custom plan</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-on-surface-variant/40">
+                        <span class="material-symbols-outlined">radio_button_unchecked</span>
+                        <span>Evaluating quality</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Output Results Section -->
+        <section class="max-w-5xl mx-auto px-6 mt-24 space-y-8">
+            <div class="flex items-center space-x-4 mb-8">
+                <div class="p-3 bg-primary-fixed-dim rounded-xl">
+                    <span class="material-symbols-outlined text-primary text-3xl">task_alt</span>
+                </div>
+                <h2 class="font-headline text-4xl font-extrabold">Your Recovery Blueprint</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- Card 1: Research Brief -->
+                    <div class="bg-surface-container-lowest rounded-xl shadow-sm border-l-4 border-tertiary overflow-hidden transition-all">
+                        <div class="p-6 flex justify-between items-center cursor-pointer hover:bg-surface-container-low transition-colors">
+                            <h4 class="text-xl font-bold flex items-center">
+                                <span class="material-symbols-outlined mr-2 text-tertiary">psychology</span>
+                                Research Brief
+                            </h4>
+                            <span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+                        </div>
+                        <div class="p-6 pt-0 text-on-surface-variant leading-relaxed space-y-4">
+                            <p>Our analysis indicates high levels of "Cognitive Tunneling" related to your work environment. We've incorporated Mindfulness-Based Stress Reduction (MBSR) protocols specifically tailored for remote leadership roles.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Habit Analysis -->
+                    <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden border-l-4 border-primary">
+                        <div class="p-6 flex justify-between items-center cursor-pointer hover:bg-surface-container-low">
+                            <h4 class="text-xl font-bold flex items-center">
+                                <span class="material-symbols-outlined mr-2 text-primary">analytics</span>
+                                Habit Analysis
+                            </h4>
+                            <span class="material-symbols-outlined text-on-surface-variant">expand_less</span>
+                        </div>
+                        <div class="p-6 pt-0 space-y-6">
+                            <div class="flex items-start space-x-4 bg-surface-container-low p-4 rounded-lg">
+                                <div class="bg-error/10 p-2 rounded-lg"><span class="material-symbols-outlined text-error">priority_high</span></div>
+                                <div>
+                                    <p class="font-bold text-on-surface">Identified Problem: Screen Fatigue</p>
+                                    <p class="text-sm text-on-surface-variant">11+ hours of digital exposure without intentional resets.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4 bg-tertiary/10 p-4 rounded-lg">
+                                <div class="bg-tertiary/20 p-2 rounded-lg"><span class="material-symbols-outlined text-tertiary">lightbulb</span></div>
+                                <div>
+                                    <p class="font-bold text-on-surface">Targeted Solution: Tonal Shifts</p>
+                                    <p class="text-sm text-on-surface-variant">Implement 5-minute "Analog Gaps" every 50 minutes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: 21-Day Plan (Main) -->
+                    <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 overflow-hidden">
+                        <div class="bg-primary text-on-primary p-8">
+                            <h4 class="text-2xl font-bold font-headline">The 21-Day Recovery Path</h4>
+                            <p class="opacity-80">Phase 1: Foundation & Boundary Setting</p>
+                        </div>
+                        <div class="p-8 space-y-12">
+                            <!-- Week 1 -->
+                            <div class="space-y-6">
+                                <h5 class="font-headline text-lg font-bold text-primary border-b border-primary/20 pb-2">Week 1: Digital Detox & Stabilization</h5>
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg hover:bg-surface-container-high transition-colors group">
+                                        <div class="flex items-center space-x-4">
+                                            <div class="w-6 h-6 border-2 border-primary/30 rounded flex items-center justify-center cursor-pointer group-hover:border-primary"></div>
+                                            <div>
+                                                <p class="font-bold">The Morning Void</p>
+                                                <p class="text-xs text-on-surface-variant uppercase tracking-tighter font-bold">Day 1-3</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex -space-x-2">
+                                            <div class="w-8 h-8 rounded-full bg-secondary-container border-2 border-surface-container-lowest flex items-center justify-center text-[10px] font-bold">15m</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg opacity-60">
+                                        <div class="flex items-center space-x-4">
+                                            <div class="w-6 h-6 border-2 border-primary/30 rounded flex items-center justify-center"></div>
+                                            <div>
+                                                <p class="font-bold">Meeting Audit</p>
+                                                <p class="text-xs text-on-surface-variant uppercase tracking-tighter font-bold">Day 4-7</p>
+                                            </div>
+                                        </div>
+                                        <div class="w-8 h-8 rounded-full bg-secondary-container border-2 border-surface-container-lowest flex items-center justify-center text-[10px] font-bold">30m</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Week 2-3 Placeholder -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="p-6 bg-surface-container-low rounded-xl border border-dashed border-outline-variant text-center">
+                                    <span class="material-symbols-outlined text-on-surface-variant/40 mb-2">lock</span>
+                                    <p class="text-sm font-bold text-on-surface-variant/50">Week 2: Deep Rest</p>
+                                </div>
+                                <div class="p-6 bg-surface-container-low rounded-xl border border-dashed border-outline-variant text-center">
+                                    <span class="material-symbols-outlined text-on-surface-variant/40 mb-2">lock</span>
+                                    <p class="text-sm font-bold text-on-surface-variant/50">Week 3: Re-Integration</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar: Quality Score -->
+                <div class="space-y-6">
+                    <div class="bg-surface-container-lowest p-8 rounded-xl shadow-lg space-y-8 sticky top-28">
+                        <div class="text-center space-y-2">
+                            <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Plan Integrity Score</p>
+                            <div class="relative inline-flex items-center justify-center">
+                                <svg class="w-32 h-32 transform -rotate-90">
+                                    <circle cx="64" cy="64" r="56" stroke="currentColor" stroke-width="8" fill="transparent" class="text-surface-container-high" />
+                                    <circle cx="64" cy="64" r="56" stroke="currentColor" stroke-width="8" fill="transparent" stroke-dasharray="351.8" stroke-dashoffset="35.18" class="text-tertiary" />
+                                </svg>
+                                <span class="absolute text-3xl font-extrabold text-on-surface">92</span>
+                            </div>
+                            <p class="text-tertiary font-bold">Exceptional Match</p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-xs font-bold uppercase">
+                                    <span>Realism</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+                                    <div class="w-[95%] h-full bg-primary-container"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-xs font-bold uppercase">
+                                    <span>Scientific Rigor</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+                                    <div class="w-[88%] h-full bg-primary-container"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-xs font-bold uppercase">
+                                    <span>Sustainability</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+                                    <div class="w-[92%] h-full bg-primary-container"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 border-t border-outline-variant/10 space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <span class="material-symbols-outlined text-tertiary text-lg">thumb_up</span>
+                                <p class="text-sm text-on-surface-variant"><span class="font-bold text-on-surface">Strength:</span> High focus on morning boundaries.</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="material-symbols-outlined text-secondary text-lg">edit</span>
+                                <p class="text-sm text-on-surface-variant"><span class="font-bold text-on-surface">Improvement:</span> Add more physical movement cues.</p>
+                            </div>
+                        </div>
+
+                        <button class="w-full py-4 rounded-xl border-2 border-primary text-primary font-bold hover:bg-primary/5 transition-colors">
+                            Download PDF Guide
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Shared Component) -->
+    <footer class="w-full mt-24 py-12 px-8 bg-[#EAE8E5] dark:bg-[#1B1C1A]">
+        <div class="flex flex-col items-center text-center space-y-6 w-full max-w-4xl mx-auto">
+            <p class="text-[#645E52] dark:text-[#E8DFD0] font-['Manrope'] text-sm leading-relaxed max-w-2xl opacity-70">
+                © 2024 Sanctuary Recovery. This planner is for informational purposes and does not replace professional medical advice.
+            </p>
+            <div class="flex space-x-8 text-sm font-medium">
+                <a href="#" class="text-[#645E52] opacity-70 hover:opacity-100 transition-opacity underline text-[#376847]">Privacy Policy</a>
+                <a href="#" class="text-[#645E52] opacity-70 hover:opacity-100 transition-opacity">Terms of Service</a>
+                <a href="#" class="text-[#645E52] opacity-70 hover:opacity-100 transition-opacity">Support</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html></style></head><body></body></html>
